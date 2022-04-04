@@ -1,0 +1,9 @@
+{
+    "retailerID": "RT003",
+    "name": "Nordstrom",
+    "location": {
+        "locationID": "NY123",
+        "name": "New York City",
+        "gps":"40.7667° N, 73.9821° W"
+    }
+}

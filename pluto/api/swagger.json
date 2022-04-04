@@ -1,0 +1,2921 @@
+{
+   "swagger": "2.0",
+   "info": {
+      "description": "",
+      "version": "1.0.0",
+      "title": "pluto"
+   },
+   "tags": [
+      {
+         "name": "API Specification",
+         "description": "All endpoints and payloads about your Project"
+      }
+   ],
+   "paths": {
+      "/users/login": {
+         "post": {
+            "tags": [
+               "users"
+            ],
+            "summary": "User Login",
+            "description": "User Login",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "username, password",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/UserLogin"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         }
+      },
+      "/users/register": {
+         "post": {
+            "tags": [
+               "users"
+            ],
+            "summary": "Register User",
+            "description": "Register User",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "userID, password, role & org",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/RegisterUser"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         }
+      },
+      "/users/update": {
+         "post": {
+            "tags": [
+               "users"
+            ],
+            "summary": "Update User Password",
+            "description": "Update Password",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "new password",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/UpdatePassword"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            },
+            "security": [
+               {
+                  "api_key": []
+               }
+            ]
+         }
+      },
+      "/product": {
+         "post": {
+            "tags": [
+               "product"
+            ],
+            "summary": "Create a new product",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "product key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Product"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "product"
+            ],
+            "summary": "Update a/an existing product",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "product key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/ShipProduct"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Product not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/untaggedproducts": {
+         "post": {
+            "tags": [
+               "product"
+            ],
+            "summary": "Query all products with no tags associated",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "factoryID",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/UntaggedProducts"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         }
+      },
+      "/unshippedproducts": {
+         "get": {
+            "tags": [
+               "product"
+            ],
+            "summary": "Query all products with no tags associated",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         }
+      },
+      "/product/{productId}": {
+         "get": {
+            "tags": [
+               "product"
+            ],
+            "summary": "get a/an product by productId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productId",
+                  "in": "path",
+                  "description": "productId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/Product"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Product not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "product"
+            ],
+            "summary": "delete a/an product by productId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productId",
+                  "in": "path",
+                  "description": "productId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Product not found"
+               }
+            }
+         }
+      },
+      "/producthistory/{productId}": {
+         "get": {
+            "tags": [
+               "product"
+            ],
+            "summary": "get all products of type product",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productId",
+                  "in": "path",
+                  "description": "productId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Product not found"
+               }
+            }
+         }
+      },
+      "/productlist": {
+         "get": {
+            "tags": [
+               "product"
+            ],
+            "summary": "get all products of type product",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/factory": {
+         "post": {
+            "tags": [
+               "factory"
+            ],
+            "summary": "Create a new factory",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "product key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Factory"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         }
+      },
+      "/productprofile": {
+         "post": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "Create a new productprofile",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "multipart/form-data"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "formData",
+                  "name": "args",
+                  "description": "",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfile"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "Update a/an existing productprofile",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfile"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfile not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/productprofile/{productProfileId}": {
+         "get": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "get a/an productprofile by productProfileId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productProfileId",
+                  "in": "path",
+                  "description": "productProfileId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfile"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfile not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "delete a/an productprofile by productProfileId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productProfileId",
+                  "in": "path",
+                  "description": "productProfileId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfile not found"
+               }
+            }
+         }
+      },
+      "/productprofilebybrand": {
+         "post": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "Get product profile by brandID",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfileByBrand"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         }
+      },
+      "/productprofilehistory/{productProfileId}": {
+         "get": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "get all productprofiles of type productprofile",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productProfileId",
+                  "in": "path",
+                  "description": "productProfileId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfile not found"
+               }
+            }
+         }
+      },
+      "/productprofilelist": {
+         "get": {
+            "tags": [
+               "productprofile"
+            ],
+            "summary": "get all productprofiles of type productprofile",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/productprofilesignature": {
+         "post": {
+            "tags": [
+               "productprofilesignature"
+            ],
+            "summary": "Create a new productprofilesignature",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "productprofilesignature key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfileSignature"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "productprofilesignature"
+            ],
+            "summary": "Update a/an existing productprofilesignature",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "productprofilesignature key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfileSignature"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfileSignature not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/productprofilesignature/{productProfileId}": {
+         "get": {
+            "tags": [
+               "productprofilesignature"
+            ],
+            "summary": "get a/an productprofilesignature by productProfileId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productProfileId",
+                  "in": "path",
+                  "description": "productProfileId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/ProductProfileSignature"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfileSignature not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "productprofilesignature"
+            ],
+            "summary": "delete a/an productprofilesignature by productProfileId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productProfileId",
+                  "in": "path",
+                  "description": "productProfileId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfileSignature not found"
+               }
+            }
+         }
+      },
+      "/productprofilesignaturehistory/{productProfileId}": {
+         "get": {
+            "tags": [
+               "productprofilesignature"
+            ],
+            "summary": "get all productprofilesignatures of type productprofilesignature",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "productProfileId",
+                  "in": "path",
+                  "description": "productProfileId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "ProductProfileSignature not found"
+               }
+            }
+         }
+      },
+      "/productprofilesignaturelist": {
+         "get": {
+            "tags": [
+               "productprofilesignature"
+            ],
+            "summary": "get all productprofilesignatures of type productprofilesignature",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/images": {
+         "post": {
+            "tags": [
+               "images"
+            ],
+            "summary": "Create a new images",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "images key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Images"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "images"
+            ],
+            "summary": "Update a/an existing images",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "images key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Images"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Images not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/images/{imageId}": {
+         "get": {
+            "tags": [
+               "images"
+            ],
+            "summary": "get a/an images by imageId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "imageId",
+                  "in": "path",
+                  "description": "imageId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/Images"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Images not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "images"
+            ],
+            "summary": "delete a/an images by imageId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "imageId",
+                  "in": "path",
+                  "description": "imageId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Images not found"
+               }
+            }
+         }
+      },
+      "/imageshistory/{imageId}": {
+         "get": {
+            "tags": [
+               "images"
+            ],
+            "summary": "get all imagess of type images",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "imageId",
+                  "in": "path",
+                  "description": "imageId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Images not found"
+               }
+            }
+         }
+      },
+      "/imageslist": {
+         "get": {
+            "tags": [
+               "images"
+            ],
+            "summary": "get all imagess of type images",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/manufacturer": {
+         "post": {
+            "tags": [
+               "manufacturer"
+            ],
+            "summary": "Create a new manufacturer",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "manufacturer key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Manufacturer"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "get": {
+            "tags": [
+               "manufacturer"
+            ],
+            "summary": "get manufacturer details on manufacturer  login",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/GetManufacturer"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Manufacturer not found"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "manufacturer"
+            ],
+            "summary": "Update a/an existing manufacturer",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "manufacturer key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Manufacturer"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Manufacturer not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/manufacturer/{manufacturerId}": {
+         "delete": {
+            "tags": [
+               "manufacturer"
+            ],
+            "summary": "delete a/an manufacturer by manufacturerId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "manufacturerId",
+                  "in": "path",
+                  "description": "manufacturerId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Manufacturer not found"
+               }
+            }
+         }
+      },
+      "/manufacturerhistory/{manufacturerId}": {
+         "get": {
+            "tags": [
+               "manufacturer"
+            ],
+            "summary": "get all manufacturers of type manufacturer",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "manufacturerId",
+                  "in": "path",
+                  "description": "manufacturerId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Manufacturer not found"
+               }
+            }
+         }
+      },
+      "/manufacturerlist": {
+         "get": {
+            "tags": [
+               "manufacturer"
+            ],
+            "summary": "get all manufacturers of type manufacturer",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/retailer": {
+         "post": {
+            "tags": [
+               "retailer"
+            ],
+            "summary": "Create a new retailer",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "retailer key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Retailer"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "get": {
+            "tags": [
+               "retailer"
+            ],
+            "summary": "get retailer details on login",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/Retailer"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Retailer not found"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "retailer"
+            ],
+            "summary": "Update a/an existing retailer",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "retailer key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Retailer"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Retailer not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/retailer/{retailerId}": {
+         "delete": {
+            "tags": [
+               "retailer"
+            ],
+            "summary": "delete a/an retailer by retailerId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "retailerId",
+                  "in": "path",
+                  "description": "retailerId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Retailer not found"
+               }
+            }
+         }
+      },
+      "/retailerhistory/{retailerId}": {
+         "get": {
+            "tags": [
+               "retailer"
+            ],
+            "summary": "get all retailers of type retailer",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "retailerId",
+                  "in": "path",
+                  "description": "retailerId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Retailer not found"
+               }
+            }
+         }
+      },
+      "/retailerlist": {
+         "get": {
+            "tags": [
+               "retailer"
+            ],
+            "summary": "get all retailers of type retailer",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/tagsupplier": {
+         "post": {
+            "tags": [
+               "tagsupplier"
+            ],
+            "summary": "Create a new tagsupplier",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "tagsupplier key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/TagSupplier"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "tagsupplier"
+            ],
+            "summary": "Update a/an existing tagsupplier",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "tagsupplier key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/TagSupplier"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "TagSupplier not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         },
+         "get": {
+            "tags": [
+               "tagsupplier"
+            ],
+            "summary": "get a/an tagsupplier by tagSupplierId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation"
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "TagSupplier not found"
+               }
+            }
+         }
+      },
+      "/tagsupplier/{tagSupplierId}": {
+         "delete": {
+            "tags": [
+               "tagsupplier"
+            ],
+            "summary": "delete a/an tagsupplier by tagSupplierId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "tagSupplierId",
+                  "in": "path",
+                  "description": "tagSupplierId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "TagSupplier not found"
+               }
+            }
+         }
+      },
+      "/tagsupplierhistory/{tagSupplierId}": {
+         "get": {
+            "tags": [
+               "tagsupplier"
+            ],
+            "summary": "get all tagsuppliers of type tagsupplier",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "tagSupplierId",
+                  "in": "path",
+                  "description": "tagSupplierId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "TagSupplier not found"
+               }
+            }
+         }
+      },
+      "/tagsupplierlist": {
+         "get": {
+            "tags": [
+               "tagsupplier"
+            ],
+            "summary": "get all tagsuppliers of type tagsupplier",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/tag": {
+         "post": {
+            "tags": [
+               "tag"
+            ],
+            "summary": "Create a new tag",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "tag key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Tag"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "tag"
+            ],
+            "summary": "Update a/an existing tag",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "tag key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Tag"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Tag not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/tag/{tagId}": {
+         "get": {
+            "tags": [
+               "tag"
+            ],
+            "summary": "get a/an tag by tagId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "tagId",
+                  "in": "path",
+                  "description": "tagId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/GetTag"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Tag not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "tag"
+            ],
+            "summary": "delete a/an tag by tagId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "tagId",
+                  "in": "path",
+                  "description": "tagId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Tag not found"
+               }
+            }
+         }
+      },
+      "/taghistory/{tagId}": {
+         "get": {
+            "tags": [
+               "tag"
+            ],
+            "summary": "get all tags of type tag",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "tagId",
+                  "in": "path",
+                  "description": "tagId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Tag not found"
+               }
+            }
+         }
+      },
+      "/taglist": {
+         "get": {
+            "tags": [
+               "tag"
+            ],
+            "summary": "get all tags of type tag",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/brand": {
+         "post": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "Create a new brand",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "brand key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Brand"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "Update a/an existing brand",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "brand key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Brand"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Brand not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/brandbymanufacturer": {
+         "get": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "get a/an brand by the manufacturer",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation"
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Brand not found"
+               }
+            }
+         }
+      },
+      "/brand/{brandId}": {
+         "get": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "get a/an brand by brandId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "brandId",
+                  "in": "path",
+                  "description": "brandId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/Brand"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Brand not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "delete a/an brand by brandId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "brandId",
+                  "in": "path",
+                  "description": "brandId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Brand not found"
+               }
+            }
+         }
+      },
+      "/brandhistory/{brandId}": {
+         "get": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "get all brands of type brand",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "brandId",
+                  "in": "path",
+                  "description": "brandId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Brand not found"
+               }
+            }
+         }
+      },
+      "/brandlist": {
+         "get": {
+            "tags": [
+               "brand"
+            ],
+            "summary": "get all brands of type brand",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      },
+      "/transaction": {
+         "post": {
+            "tags": [
+               "transaction"
+            ],
+            "summary": "Create a new transaction",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "transaction key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Transaction"
+                  }
+               }
+            ],
+            "responses": {
+               "405": {
+                  "description": "Invalid input"
+               }
+            }
+         },
+         "put": {
+            "tags": [
+               "transaction"
+            ],
+            "summary": "Update a/an existing transaction",
+            "description": "",
+            "operationId": "",
+            "consumes": [
+               "application/json"
+            ],
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "in": "body",
+                  "name": "args",
+                  "description": "transaction key and value",
+                  "required": true,
+                  "schema": {
+                     "$ref": "#/definitions/Transaction"
+                  }
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Transaction not found"
+               },
+               "405": {
+                  "description": "Validation exception"
+               }
+            }
+         }
+      },
+      "/transaction/{transactionId}": {
+         "get": {
+            "tags": [
+               "transaction"
+            ],
+            "summary": "get a/an transaction by transactionId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "transactionId",
+                  "in": "path",
+                  "description": "transactionId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "200": {
+                  "description": "successful operation",
+                  "schema": {
+                     "$ref": "#/definitions/Transaction"
+                  }
+               },
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Transaction not found"
+               }
+            }
+         },
+         "delete": {
+            "tags": [
+               "transaction"
+            ],
+            "summary": "delete a/an transaction by transactionId as primary key",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "transactionId",
+                  "in": "path",
+                  "description": "transactionId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Transaction not found"
+               }
+            }
+         }
+      },
+      "/transactionhistory/{transactionId}": {
+         "get": {
+            "tags": [
+               "transaction"
+            ],
+            "summary": "get all transactions of type transaction",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               },
+               {
+                  "name": "transactionId",
+                  "in": "path",
+                  "description": "transactionId as a key",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "400": {
+                  "description": "Invalid ID supplied"
+               },
+               "404": {
+                  "description": "Transaction not found"
+               }
+            }
+         }
+      },
+      "/transactionlist": {
+         "get": {
+            "tags": [
+               "transaction"
+            ],
+            "summary": "get all transactions of type transaction",
+            "description": "",
+            "operationId": "",
+            "produces": [
+               "application/json"
+            ],
+            "parameters": [
+               {
+                  "in": "header",
+                  "name": "x-access-token",
+                  "description": "token",
+                  "required": true,
+                  "type": "string"
+               }
+            ],
+            "responses": {
+               "500": {
+                  "description": "server error"
+               }
+            }
+         }
+      }
+   },
+   "securityDefinitions": {
+      "api_key": {
+         "type": "apiKey",
+         "in": "header",
+         "name": "x-access-token"
+      }
+   },
+   "definitions": {
+      "UserLogin": {
+         "properties": {
+            "email": {
+               "type": "string"
+            },
+            "password": {
+               "type": "string"
+            }
+         }
+      },
+      "RegisterUser": {
+         "properties": {
+            "email": {
+               "type": "string"
+            },
+            "password": {
+               "type": "string"
+            },
+            "org": {
+               "type": "string"
+            },
+            "role": {
+               "type": "string"
+            }
+         }
+      },
+      "UpdatePassword": {
+         "properties": {
+            "password": {
+               "type": "string"
+            },
+            "newPassword": {
+               "type": "string"
+            }
+         }
+      },
+      "ShipProduct": {
+         "properties": {
+            "retailerID": {
+               "type": "string"
+            },
+            "productID": {
+               "type": "string"
+            },
+            "orderNumber": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "retailerID",
+            "productID",
+            "orderNumber"
+         ]
+      },
+      "ProductProfileByBrand": {
+         "type": "object",
+         "properties": {
+            "brandID": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "brandID"
+         ]
+      },
+      "Product": {
+         "type": "object",
+         "properties": {
+            "skuID": {
+               "type": "string"
+            },
+            "upCode": {
+               "type": "string"
+            },
+            "profileID": {
+               "type": "string"
+            },
+            "factoryID": {
+               "type": "string"
+            },
+            "orderNumber": {
+               "type": "string"
+            },
+            "retailerID": {
+               "type": "string"
+            },
+            "color": {
+               "type": "string"
+            },
+            "msrp": {
+               "type": "string"
+            },
+            "manufactureDate": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "ProductID",
+            "SKUID",
+            "UPCode",
+            "ProfileID",
+            "FactoryID",
+            "Color",
+            "MSRP",
+            "ManufactureDate"
+         ]
+      },
+      "ProductProfile": {
+         "type": "object",
+         "properties": {
+            "Name": {
+               "type": "string"
+            },
+            "Size": {
+               "type": "string"
+            },
+            "Weight": {
+               "type": "string"
+            },
+            "BrandID": {
+               "type": "string"
+            },
+            "Description": {
+               "type": "string"
+            },
+            "Images": {
+               "type": "file"
+            }
+         },
+         "required": [
+            "Name",
+            "Size",
+            "Weight",
+            "BrandID",
+            "Description"
+         ]
+      },
+      "ProductProfileSignature": {
+         "type": "object",
+         "properties": {
+            "ProductProfileID": {
+               "type": "string"
+            },
+            "SignatureDocument": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "ProductProfileID",
+            "SignatureDocument"
+         ]
+      },
+      "Images": {
+         "type": "object",
+         "properties": {
+            "ImageID": {
+               "type": "string"
+            },
+            "Description": {
+               "type": "string"
+            },
+            "ImageString": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "ImageID",
+            "Description",
+            "ImageString"
+         ]
+      },
+      "UntaggedProducts": {
+         "type": "object",
+         "properties": {
+            "factoryID": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "factoryID"
+         ]
+      },
+      "Manufacturer": {
+         "type": "object",
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "factoryID": {
+               "type": "array"
+            },
+            "location": {
+               "type": "object",
+               "properties": {
+                  "locationID": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "location",
+                  "name",
+                  "factoryID"
+               ]
+            }
+         },
+         "required": [
+            "Name",
+            "Location"
+         ]
+      },
+      "GetManufacturer": {
+         "type": "object",
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "factoryID": {
+               "type": "array"
+            },
+            "location": {
+               "type": "object",
+               "properties": {
+                  "locationID": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  }
+               }
+            }
+         }
+      },
+      "Retailer": {
+         "type": "object",
+         "properties": {
+            "Name": {
+               "type": "string"
+            },
+            "Location": {
+               "type": "object",
+               "properties": {
+                  "LocationID": {
+                     "type": "string"
+                  },
+                  "Name": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "LocationID",
+                  "Name"
+               ]
+            }
+         },
+         "required": [
+            "Name",
+            "Location"
+         ]
+      },
+      "TagSupplier": {
+         "type": "object",
+         "properties": {
+            "name": {
+               "type": "string"
+            },
+            "generateTechnology": {
+               "type": "string"
+            },
+            "scanTechnology": {
+               "type": "string"
+            },
+            "factoryID": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "name",
+            "generateTechnology",
+            "scanTechnology",
+            "factoryID"
+         ]
+      },
+      "Tag": {
+         "type": "object",
+         "properties": {
+            "productID": {
+               "type": "string"
+            },
+            "pattern": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "productID",
+            "pattern"
+         ]
+      },
+      "GetTag": {
+         "type": "object",
+         "properties": {
+            "tagID": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "tagID"
+         ]
+      },
+      "Brand": {
+         "type": "object",
+         "properties": {
+            "brandID": {
+               "type": "string"
+            },
+            "name": {
+               "type": "string"
+            },
+            "logo": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "brandID",
+            "name",
+            "logo"
+         ]
+      },
+      "Factory": {
+         "type": "object",
+         "properties": {
+            "brandID": {
+               "type": "string"
+            },
+            "location": {
+               "type": "object",
+               "properties": {
+                  "locationID": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  }
+               }
+            },
+            "required": [
+               "brandID",
+               "location"
+            ]
+         }
+      },
+      "Transaction": {
+         "type": "object",
+         "properties": {
+            "productID": {
+               "type": "string"
+            },
+            "location": {
+               "type": "object",
+               "properties": {
+                  "locationID": {
+                     "type": "string"
+                  },
+                  "name": {
+                     "type": "string"
+                  }
+               },
+               "required": [
+                  "LocationID",
+                  "Name"
+               ]
+            },
+            "gps": {
+               "type": "string"
+            },
+            "tag": {
+               "type": "object",
+               "properties": {
+                  "tagID": {
+                     "type": "string"
+                  },
+                  "tagSuppplierID": {
+                     "type": "string"
+                  },
+                  "pattern": {
+                     "type": "string"
+                  },
+                  "status": {
+                     "type": "string"
+                  },
+                  "productID": {
+                     "type": "string"
+                  }
+               }
+            },
+            "emailID": {
+               "type": "string"
+            }
+         }
+      }
+   }
+}

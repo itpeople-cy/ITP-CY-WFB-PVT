@@ -1,0 +1,9 @@
+{
+    "retailerID": "RT002",
+    "name": "Louis Vuitton",
+    "location": {
+        "locationID": "NY123",
+        "name": "New York City",
+        "gps":"40.7631° N, 73.9735° W"
+    }
+}

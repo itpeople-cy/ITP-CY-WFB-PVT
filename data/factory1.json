@@ -1,0 +1,12 @@
+{
+    "factoryID": "FR001",
+    "location": {
+        "locationID": "CH001",
+        "name": "CHINA",
+        "gps":"40° 45' 44.406'' N 73° 58' 3.5832'' W"
+    },
+    "brandIDs": [
+        "LV",
+        "FN"
+    ]
+}

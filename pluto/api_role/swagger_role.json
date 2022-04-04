@@ -1,0 +1,245 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Project Kicker",
+        "version": "1.0.0",
+        "title": "Project Kicker Role Mgmt"
+    },
+    "tags": [
+        {
+            "name": "API Specification",
+            "description": "All endpoints and payloads about your Project"
+        }
+    ],
+    "paths": {
+        "/roleConfig": {
+            "post": {
+                "tags": [
+                    "RoleConfig"
+                ],
+                "summary": "Create a new record role config",
+                "description": "Record Role Config",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "args",
+                        "description": "role and roleAccess  ",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/RecordRoleConfig"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "put": {
+              "tags":[
+                  "RoleConfig"
+                ],
+                "summary": "Updates the recorded role config",
+                "description": "Update Role Config",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "args",
+                        "description": "role and roleAccess  ",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateRoleConfig"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/roleconfiglist": {
+            "get": {
+                "tags": [
+                    "RoleConfig"
+                ],
+                "summary": "Get Role Config List",
+                "description": "Gets all the role configs",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/roleconfig/{ChainCodeID}": {
+            "get": {
+                "tags": [
+                    "RoleConfig"
+                ],
+                "summary": "Query Role Config",
+                "description": "Query role config",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "ChainCodeID",
+                        "description": "ChaincodeID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "RoleConfig"
+                ],
+                "summary": "Delete Role Config",
+                "description": "Delete role config",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "ChainCodeID",
+                        "description": "ChaincodeID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        },
+        "/roleconfighistory/{ChainCodeID}": {
+            "get": {
+                "tags": [
+                    "RoleConfig"
+                ],
+                "summary": "Request Role Config History",
+                "description": "Request Role Config History",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "ChainCodeID",
+                        "description": "ChainCodeID",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key": []
+                    }
+                ]
+            }
+        }
+    },
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "x-access-token"
+        }
+    },
+    "security": [
+        {
+            "api_key": []
+        }
+    ],
+    "definitions": {
+        "RecordRoleConfig": {
+            "properties": {
+                "role": {
+                    "type": "string"
+                },
+                "roleAccess": {
+                    "type": "array"
+                }
+            }
+        },
+        "UpdateRoleConfig": {
+            "properties": {
+                "role": {
+                    "type": "string"
+                },
+                "roleAccess": {
+                    "type": "array"
+                }
+            }
+        }
+    }
+}

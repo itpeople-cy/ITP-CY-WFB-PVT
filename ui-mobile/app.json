@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Anti-Counterfeit Mobile",
+    "slug": "anticounterfeit",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.chainyard.counterfeit",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.chainyard.counterfeit"
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content"
+    },
+    "extra": {
+      "retailer1Email": "retailer1@example.com",
+      "retailer2Email": "retailer2@example.com",
+      "consumerEmail": "consumer@example.com",
+      "staging": {
+        "counterfeitApiUrl": "http://ec2-3-81-107-94.compute-1.amazonaws.com"
+      }
+    }
+  }
+}

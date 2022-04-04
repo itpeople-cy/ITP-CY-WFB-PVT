@@ -1,0 +1,13 @@
+{
+    "name": "Local Network Org1",
+    "x-type": "hlfv1",
+    "description": "Connection Profile for an IT People Corporation. Blockchain Platform Network",
+    "version": "1.0.2",
+    "client": {
+        "organization": "org1",
+        "crypto-keysize": 256,
+        "key-value-store-impl": "../../fabric-helper-sdk/lib/impl/MongoDBKeyValueStore.js",
+        "key-value-store-name": "org1-kvs",
+        "key-value-store-db": "mongodb://localhost:37017/project-kicker-kvs"
+    }
+}

@@ -1,0 +1,49 @@
+#
+#  Copyright 2018 IT People Corporation. All Rights Reserved.
+#
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an 'AS IS' BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+#  Author: Sandeep Pulluru <sandeep.pulluru@itpeoplecorp.com>
+#  Author: Ratnakar Asara <ratnakar.asara@itpeoplecorp.com>
+
+version: '2'
+
+services:
+  couchdb0:
+    container_name: couchdb0
+    extends:
+      file: base.yaml
+      service: couchdb
+    # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
+    # for example map it to utilize Fauxton User Interface in dev environments.
+    ports:
+      - "5984:5984"
+
+  peer0.org1.example.com:
+    environment:
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb0:5984
+    depends_on:
+      - couchdb0
+
+  couchdb1:
+    container_name: couchdb1
+    extends:
+      file: base.yaml
+      service: couchdb
+    # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
+    # for example map it to utilize Fauxton User Interface in dev environments.
+    ports:
+      - "6984:5984"
+
+  peer0.org2.example.com:
+    environment:
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
+    depends_on:
+      - couchdb1

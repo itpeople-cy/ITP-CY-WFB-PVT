@@ -1,0 +1,3865 @@
+{
+	"info": {
+		"_postman_id": "237a41c5-c96d-4541-bed7-8829e810a4f2",
+		"name": "PLUTO Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access Role Management",
+			"item": [
+				{
+					"name": "Add role access-admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"admin\",\n    \"roleAccess\": [\n        \"recordBrand\",\n        \"recordProductStyle\",\n        \"updateProductProfile\",\n        \"recordManufacturer\",\n        \"recordTagSupplier\",\n        \"recordFactory\",\n        \"recordRetailer\",\n        \"queryRetailerList\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role access- manufacturer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjExMzIwODQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTYwNzcyMDg0fQ.RhfEOM5J8A79U3y1cfjxoGPyneJ5JHglIb7Z4aZ8oxg"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"manufacturer\",\n    \"roleAccess\": [\n        \"queryManufacturer\",\n        \"queryProductProfilebyBrand\",\n        \"queryFactorybyBrand\",\n        \"recordProduct\",\n        \"queryProductsbyBrand\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role access- consumer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"consumer\",\n    \"roleAccess\": [\n    \t\"verifyCertificateHash\",\n    \t\"queryRetailerList\"\n    \n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role access- tag supplier",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"tagsupplier\",\n    \"roleAccess\": [\n        \"queryTagSupplier\",\n        \"queryBrandbyTagTechnology\",\n    \t\"queryUntaggedProductsbyBrand\",\n        \"recordTag\",\n        \"queryUntaggedProducts\",\n        \"recordTagforProduct\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role access- factory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjExNTg4NjYsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTYwNzk4ODY2fQ.DwwW1HPy_EOmRE59Ay6eR2RhG7EbFmRskBpoVag-JjM"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"factory\",\n    \"roleAccess\": [\n        \"queryFactory\",\n        \"queryBrand\",\n        \"queryTagsbyBrand\",\n        \"queryUntaggedProductsbyBrand\",\n        \"assignTagtoProduct\",\n        \"queryBrand\",\n        \"queryUnshippedProducts\",\n        \"updateProduct\",\n        \"recordTagforProduct\",\n        \"queryScanbyID\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role access-retailer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"retailer\",\n    \"roleAccess\": [\n        \"queryRetailer\",\n        \"queryProductbyRetailer\",\n        \"recordTransaction\",\n        \"queryTag\",\n        \"scanTag\",\n        \"queryProduct\",\n        \"authenticateTag\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role warehouse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"warehouse\",\n    \"roleAccess\": [\n        \"recordScan\",\n        \"queryScanbyID\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3200/roleconfig",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"roleconfig"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Record Brands",
+			"item": [
+				{
+					"name": "Record LV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"brandID\":\"LV\",\n        \"name\": \"Louis Vuitton\",\n        \"logo\": \"\",\n        \"manufacturerID\": \"LVMH\",\n        \"tagTechnology\":\"qrcode\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record FENDI",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"brandID\":\"FN\",\n        \"name\": \"Fendi\",\n        \"logo\": \"\",\n        \"manufacturerID\": \"LVMH\",\n        \"tagTechnology\":\"qrcode\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record MJ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"brandID\":\"MJ\",\n        \"name\": \"Marc Jacobs\",\n        \"logo\": \"\",\n        \"manufacturerID\": \"LVMH\",\n        \"tagTechnology\":\"qrcode\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"brandID\":\"DG\",\n        \"name\": \"Dolce and Gabbana\",\n        \"logo\": \"\",\n        \"manufacturerID\": \"DG\",\n        \"tagTechnology\":\"zortag\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register and Record Manufacturer",
+			"item": [
+				{
+					"name": "Register Manufacturer LVMH",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"lvmh@example.com\",\n  \"password\": \"test123\",\n  \"org\":\"org1\",\n  \"role\":\"manufacturer\",\n  \"userID\":\"LVMH\"\n  \n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Manufacturer DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"dg@example.com\",\n  \"password\": \"test123\",\n  \"org\":\"org1\",\n  \"role\":\"manufacturer\",\n  \"userID\":\"DG\"\n  \n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Manufacturer LVMH",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"manufacturerID\": \"LVMH\",\n    \"name\": \"Louis Vuitton\",\n    \"location\": {\n        \"locationID\": \"FRN001\",\n        \"name\": \"FRANCE\",\n        \"gps\":\"40° 43' 50.1960'' N and 73° 56' 6.8712'' W\"\n    },\n    \"factoryIDs\": [\n        \"FR001\",\n        \"FR002\"\n    ],\n    \"brandIDs\": [\n        \"LV\",\n        \"FN\",\n        \"MJ\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/manufacturer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"manufacturer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Manufacturer DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"manufacturerID\": \"DG\",\n    \"name\": \"Dolce and Gabbana\",\n    \"location\": {\n        \"locationID\": \"IT001\",\n        \"name\": \"ITALY\",\n        \"gps\":\"40° 43' 50.1960'' N and 73° 56' 6.8712'' W\"\n    },\n    \"factoryIDs\": [\n        \"FR003\"\n    ],\n    \"brandIDs\": [\n        \"DG\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/manufacturer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"manufacturer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register and Record Factory",
+			"item": [
+				{
+					"name": "Register Factory 001",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"factory1@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"factory\",\n    \"userID\": \"FR001\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Factory 002",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"factory2@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"factory\",\n    \"userID\": \"FR002\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Factory 003",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"factory3@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"factory\",\n    \"userID\": \"FR003\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Factory 001",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"factoryID\": \"FR001\",\n    \"location\": {\n        \"locationID\": \"CH001\",\n        \"name\": \"CHINA\",\n        \"gps\":\"40° 45' 44.406'' N 73° 58' 3.5832'' W\"\n    },\n    \"brandIDs\": [\n        \"LV\",\n        \"FN\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/factory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Factory 002",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"factoryID\": \"FR002\",\n    \"location\": {\n        \"locationID\": \"CH002\",\n        \"name\": \"CHINA\",\n        \"gps\":\"40° 45' 44.406'' N 73° 58' 3.5832'' W\"\n    },\n    \"brandIDs\": [\n        \"MJ\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/factory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Factory 003",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"factoryID\": \"FR003\",\n    \"location\": {\n        \"locationID\": \"VT001\",\n        \"name\": \"VIETNAM\",\n        \"gps\": \"567840° 45' 44.406'' N 73° 58' 3.5832'' W98\"\n    },\n    \"brandIDs\": [\n        \"DG\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/factory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register and Record Tagsupplier",
+			"item": [
+				{
+					"name": "Register Tag Supplier CYTag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"cytagging@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"tagsupplier\",\n    \"userID\": \"CYTag\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Tag Supplier Zortag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"zortag@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"tagsupplier\",\n    \"userID\": \"zortag\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Tag Supplier CY",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagSupplierID\": \"CYTag\",\n    \"name\": \"CYTag\",\n    \"tagTechnology\": [\n        \"qrcode\"\n    ],\n    \"scanTechnology\": [\n        \"cc:cy:generatehash\"\n    ],\n    \"factoryIDs\": [\n        \"FR001\",\n        \"FR002\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tagsupplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tagsupplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Tag Supplier Zortag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagSupplierID\": \"zortag\",\n    \"name\": \"zortag\",\n    \"tagTechnology\": [\n        \"chemical\"\n    ],\n    \"scanTechnology\": [\n        \"app:zortag:zorsecure\"\n    ],\n    \"factoryIDs\": [\n        \"FR003\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tagsupplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tagsupplier"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register and Record Retailer",
+			"item": [
+				{
+					"name": "Register Retailer Bloomingdale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"bloomingdale@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"retailer\",\n    \"userID\": \"RT001\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Retailer LV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"lv@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"retailer\",\n    \"userID\": \"RT002\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Retailer Nordtsorm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nordstrom@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"retailer\",\n    \"userID\": \"RT003\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Retailer DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dgretailer@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"retailer\",\n    \"userID\": \"RT004\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Retailer Bloomingdale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"retailerID\": \"RT001\",\n    \"name\": \"Bloomingdale's\",\n    \"location\": {\n        \"locationID\": \"NY123\",\n        \"name\": \"New York City\",\n        \"gps\": \"40° 45' 44.406'' N 73° 58' 3.5832'' W\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/retailer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retailer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Retailer LV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"retailerID\": \"RT002\",\n    \"name\": \"Louis Vuitton\",\n    \"location\": {\n        \"locationID\": \"NY123\",\n        \"name\": \"New York City\",\n        \"gps\":\"40.7631° N, 73.9735° W\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/retailer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retailer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Retailer Nordstrom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"retailerID\": \"RT003\",\n    \"name\": \"Nordstrom\",\n    \"location\": {\n        \"locationID\": \"NY123\",\n        \"name\": \"New York City\",\n        \"gps\":\"40.7667° N, 73.9821° W\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/retailer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retailer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Retailer DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"retailerID\": \"RT004\",\n    \"name\": \"Dolce and Gabbana\",\n    \"location\": {\n        \"locationID\": \"NY123\",\n        \"name\": \"New York City\",\n        \"gps\":\"40° 43' 50.1960'' N 73° 56' 6.8712'' W\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/retailer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retailer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register Product Profiles",
+			"item": [
+				{
+					"name": "Record a product profile1- LV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Functional tote embellished with a distinctive Monogram Flower padlock in gleaming golden metal.",
+									"type": "text"
+								},
+								{
+									"key": "brandID",
+									"value": "LV",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Flower Tote Bag",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "13.4 x 9.5 x 5.1 inches",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "4.45lbs",
+									"type": "text"
+								},
+								{
+									"key": "styleID",
+									"value": "M43553",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product profile1- LV- add pictures",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Functional tote embellished with a distinctive Monogram Flower padlock in gleaming golden metal.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "brandID",
+									"value": "LV",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Flower Tote Bag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5*6*8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "4.45lbs",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "styleID",
+									"value": "M43553",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record a product profile2- LV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Sam Falls’ limited edition ARTYCAPUCINES, began as a large original artwork that is reproduced in all its delicacy, depth and texture using a jacquard weave, high-definition printing and precise handmade embroidery.",
+									"type": "text"
+								},
+								{
+									"key": "brandID",
+									"value": "LV",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "ARTYCAPUCINES PM SAM FALLS",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "12.40 x 7.87 x 4.33 inches",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "4.45lbs",
+									"type": "text"
+								},
+								{
+									"key": "styleID",
+									"value": "M53641",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product profile2- LV- add pictures",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Functional tote embellished with a distinctive Monogram Flower padlock in gleaming golden metal.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "brandID",
+									"value": "LV",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Flower Tote Bag",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5*6*8",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "4.45lbs",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "styleID",
+									"value": "M53641",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record a product profile 1- DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Wallet bag in lily-print Dauphine calfskin embellished by 3D embroidery with painted resin and hand-applied crystal details. It features solid-color sides and placed embellishment that recreates the perfect symmetry of the design. Thanks to the detachable chain, it can be worn crossbody or carried as a handbag",
+									"type": "text"
+								},
+								{
+									"key": "brandID",
+									"value": "DG",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Wallet Bag In Lily-Print Dauphine Calfskin With Embroidery",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "19.5 x 13 x 4 cm - 7.7 x 5.1 x 1.6 inches",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "2lbs",
+									"type": "text"
+								},
+								{
+									"key": "styleID",
+									"value": "BI1028AA080HFKK8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product profile1- DG- add pictures",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "styleID",
+									"value": "BI1028AA080HFKK8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record a product profile 1- FN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Fendi bucket bag in FF embossed calf leather, Removable top handle, Open top with drawstring closure, Made in Italy",
+									"type": "text"
+								},
+								{
+									"key": "brandID",
+									"value": "FN",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Mon Tresor FF-Embossed Leather Bucket Bag",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "7.1\"H x 4.7\"W x 4\"D",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "2lbs",
+									"type": "text"
+								},
+								{
+									"key": "styleID",
+									"value": "401099771145",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a product profile1- FN- add pictures",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "styleID",
+									"value": "401099771145",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record a product profile 1- MJ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY5NDQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5ODI2OTQ0fQ.12UEZwhcdgUR6ESK2Q3QkC52SQKKcccPxufClUrDUW8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "description",
+									"value": "Two interior slip compartments, interior zip compartment, Gold-tone hardware and logo on front, Detachable logo luggage tag with lock hardware, Mannequin model measurements: 5'10\" height, wearing a size 4 or small  Lined, Cow split leather, coating; polyurethane",
+									"type": "text"
+								},
+								{
+									"key": "brandID",
+									"value": "MJ",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "The Editor Leather Satchel",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "8.26\"W x 4.3\"D x 7.7\"H",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "3lbs",
+									"type": "text"
+								},
+								{
+									"key": "styleID",
+									"value": "MJ3164744",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product profile1-MJ-add pictures",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTk5NTUwMDIsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5NTk1MDAyfQ.KMLOaT3o6YP0g680174WHi_6c2GoGtFF4wCLTOfNYcs"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "styleID",
+									"value": "MJ3164744",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manufacturer Login",
+			"item": [
+				{
+					"name": "Query Manufacturer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTQxODIsIl9pZCI6IkxWTUgiLCJlbWFpbCI6Imx2bWhAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJtYW51ZmFjdHVyZXIiLCJpYXQiOjE1NTk4MzQxODJ9.tquw1LHJgM6lfR98lR64uFwiC91rCuUNkUuooS7oy_Y"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/manufacturer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"manufacturer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Product Profile by Brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTQxODIsIl9pZCI6IkxWTUgiLCJlbWFpbCI6Imx2bWhAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJtYW51ZmFjdHVyZXIiLCJpYXQiOjE1NTk4MzQxODJ9.tquw1LHJgM6lfR98lR64uFwiC91rCuUNkUuooS7oy_Y"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/productprofilebybrand/DG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productprofilebybrand",
+								"DG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Factory by brandID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTQxODIsIl9pZCI6IkxWTUgiLCJlbWFpbCI6Imx2bWhAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJtYW51ZmFjdHVyZXIiLCJpYXQiOjE1NTk4MzQxODJ9.tquw1LHJgM6lfR98lR64uFwiC91rCuUNkUuooS7oy_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/factory?brandid=MJ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factory"
+							],
+							"query": [
+								{
+									"key": "brandid",
+									"value": "MJ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTQ0OTEsIl9pZCI6IkRHIiwiZW1haWwiOiJkZ0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6Im1hbnVmYWN0dXJlciIsImlhdCI6MTU1OTgzNDQ5MX0.GKvAkRMrIFKoTicjylmTdesoFuI0JNjf94_mJ5g-jD4"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								},
+								{
+									"key": "skuID",
+									"value": "SKU123",
+									"type": "text"
+								},
+								{
+									"key": "factoryID",
+									"value": "FR003",
+									"type": "text"
+								},
+								{
+									"key": "styleID",
+									"value": "BI1028AA080HFKK8",
+									"type": "text"
+								},
+								{
+									"key": "upCode",
+									"value": "UP123",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Black",
+									"type": "text"
+								},
+								{
+									"key": "msrp",
+									"value": "100USD",
+									"type": "text"
+								},
+								{
+									"key": "brandID",
+									"value": "DG",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LVMH login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"lvmh@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DG login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dg@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Products by Brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjExMzMwNzMsIl9pZCI6IkRHIiwiZW1haWwiOiJkZ0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6Im1hbnVmYWN0dXJlciIsImlhdCI6MTU2MDc3MzA3M30.zFGv_0EMXBr7hXA5rnnbCCcV--Akhsw4EvxS_YqLwwI"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/productsbybrand/DG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productsbybrand",
+								"DG"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag Supplier Login",
+			"item": [
+				{
+					"name": "Query Tag Supplier",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk0NDcsIl9pZCI6IkNZVGFnIiwiZW1haWwiOiJjeXRhZ2dpbmdAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJ0YWdzdXBwbGllciIsImlhdCI6MTU1OTc1OTQ0N30.2rL42ahaFZY1B1ZeCntdIfgIcfjPTDMYjWMG6-ZhCmA"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/tagsupplier",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tagsupplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "zortag login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"zortag@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cy login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"cytagging@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Brand by Tag Technology",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTU1NjYsIl9pZCI6IkNZVGFnIiwiZW1haWwiOiJjeXRhZ2dpbmdAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJ0YWdzdXBwbGllciIsImlhdCI6MTU1OTgzNTU2Nn0.80D5ASzoF5I5eSow4EV2CxZyMnGtw3NCk-ynwJGXRCw"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/qrcode?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"qrcode"
+							],
+							"query": [
+								{
+									"key": "x-access-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTkwODE2MzYsIl9pZCI6IlRTMDAyIiwiZW1haWwiOiJ0YWdzdXBwbGllcjJAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJ0YWdzdXBwbGllciIsImlhdCI6MTU1ODcyMTYzNn0.MfcIOADaPsBZ5hc6c3xlPEa7vZgwCT-ESXDVcDilGRk",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query untagged products by brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTU1NjYsIl9pZCI6IkNZVGFnIiwiZW1haWwiOiJjeXRhZ2dpbmdAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJ0YWdzdXBwbGllciIsImlhdCI6MTU1OTgzNTU2Nn0.80D5ASzoF5I5eSow4EV2CxZyMnGtw3NCk-ynwJGXRCw"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/untaggedproducts/LV",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"untaggedproducts",
+								"LV"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Tag for Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk0NDcsIl9pZCI6IkNZVGFnIiwiZW1haWwiOiJjeXRhZ2dpbmdAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJ0YWdzdXBwbGllciIsImlhdCI6MTU1OTc1OTQ0N30.2rL42ahaFZY1B1ZeCntdIfgIcfjPTDMYjWMG6-ZhCmA"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagTechnology\": \"qrcode\",\n    \"productID\":\"LVITEM3627\",\n    \"factoryID\":\"FR001\",\n    \"brandID\":\"LV\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTU3NDEsIl9pZCI6InpvcnRhZyIsImVtYWlsIjoiem9ydGFnQGV4YW1wbGUuY29tIiwib3JnTmFtZSI6Im9yZzEiLCJyb2xlIjoidGFnc3VwcGxpZXIiLCJpYXQiOjE1NTk4MzU3NDF9.8_8gor7PelNSEnC_trndaFiEp-l-twTm-wBGd9HCiio"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagTechnology\": \"chemical\",\n    \"factoryID\": \"FR003\",\n    \"brandID\": \"DG\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tag"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WareHouse Login",
+			"item": [
+				{
+					"name": "Record Scan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTc4MzgsIl9pZCI6IndhcmVob3VzZTAwMSIsImVtYWlsIjoid2FyZWhvdXNlQGV4YW1wbGUuY29tIiwib3JnTmFtZSI6Im9yZzEiLCJyb2xlIjoid2FyZWhvdXNlIiwiaWF0IjoxNTU5ODM3ODM4fQ.LK8qKD2beiZtkoKMCu-eiGTEXlLySG-GT4YJZe41xuA",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"location\": {\n        \"locationID\": \"NY123\",\n        \"name\": \"New York City\",\n        \"gps\": \"40° 45' 44.406'' N 73° 58' 3.5832'' W\"\n    },\n    \"scanBy\": \"warehouse\",\n    \"productID\": \"DGITEM0112\",\n    \"tagID\": \"11e98871c707cd10947bbf63048f87d0\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/scan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login warehouse",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"warehouse@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Scan By ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA2MzUxMjEsIl9pZCI6IndhcmVob3VzZTAwMSIsImVtYWlsIjoid2FyZWhvdXNlQGV4YW1wbGUuY29tIiwib3JnTmFtZSI6Im9yZzEiLCJyb2xlIjoid2FyZWhvdXNlIiwiaWF0IjoxNTYwMjc1MTIxfQ.Qrox798hDm6wVJeKkUH9be9cpvRevDoyplm-m4M1aDs"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagID\": \"\",\n    \"productID\":\"DGITEM4784\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/scanbyid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scanbyid"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Factory Login",
+			"item": [
+				{
+					"name": "Query Factory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk1OTAsIl9pZCI6IkZSMDAxIiwiZW1haWwiOiJmYWN0b3J5MUBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk3NTk1OTB9.j9L_Dkbm3VSKCoRzBhZf51keIsn12DDcwX1CUqN-A0M"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/factory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"factory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Unshipped Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTU4ODYsIl9pZCI6IkZSMDAzIiwiZW1haWwiOiJmYWN0b3J5M0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk4MzU4ODZ9.SoddOHajiP0HxUjzXUfO2OJSUAeQvL76tv4CM7Uublg"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/unshippedproducts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"unshippedproducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query untagged products by brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTU4ODYsIl9pZCI6IkZSMDAzIiwiZW1haWwiOiJmYWN0b3J5M0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk4MzU4ODZ9.SoddOHajiP0HxUjzXUfO2OJSUAeQvL76tv4CM7Uublg"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/untaggedproducts/DG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"untaggedproducts",
+								"DG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query unassigned tags by technology",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTU4ODYsIl9pZCI6IkZSMDAzIiwiZW1haWwiOiJmYWN0b3J5M0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk4MzU4ODZ9.SoddOHajiP0HxUjzXUfO2OJSUAeQvL76tv4CM7Uublg"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/unassignedtags/chemical",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"unassignedtags",
+								"chemical"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Factory 1 Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"factory3@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Factory 2 Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"factory2@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Factory 3 Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"factory1@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Tag to Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTk5MTUxMTIsIl9pZCI6IkZSMDAyIiwiZW1haWwiOiJmYWN0b3J5MkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk1NTUxMTJ9.wmPUelBFy8V5pvhSV4qrKQxGNPxX55EO_ivwk5d-grQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productID\": \"DGITEM0112\",\n    \"tagID\": \"11e98871c707cd10947bbf63048f87d0\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/assigntagtoproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"assigntagtoproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ship Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk1OTAsIl9pZCI6IkZSMDAxIiwiZW1haWwiOiJmYWN0b3J5MUBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk3NTk1OTB9.j9L_Dkbm3VSKCoRzBhZf51keIsn12DDcwX1CUqN-A0M"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productID\": \"DGITEM0112\",\n    \"orderNumber\": \"O123\",\n    \"retailerID\": \"RT001\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Tag for Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjExNTc0MDMsIl9pZCI6IkZSMDAzIiwiZW1haWwiOiJmYWN0b3J5M0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NjA3OTc0MDN9.pgiYN7j9wQ74BYHZsNBVO8JmG1P52F70Yl5EAAOJFDY"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagTechnology\": \"qrcode\",\n    \"productID\":\"LVITEM3627\",\n    \"factoryID\":\"FR001\",\n    \"brandID\":\"LV\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Scan By ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjExNTg3MTgsIl9pZCI6IkZSMDAzIiwiZW1haWwiOiJmYWN0b3J5M0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NjA3OTg3MTh9.snjnJb0M31OMa-IFxDbtjw4nzu4UW2J_uD1ZDJLyUQA"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagID\": \"\",\n    \"productID\":\"DGITEM4784\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/scanbyid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scanbyid"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Retailer Login",
+			"item": [
+				{
+					"name": "Login Retailer Bloomingdale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"bloomingdale@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Retailer LV",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"lv@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Retailer Nordstrom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nordstrom@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Retailer DG",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dgretailer@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Retailer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTcyMDcsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJibG9vbWluZ2RhbGVAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTgzNzIwN30.HiQ07iRLSDW6vz9cm7bmfqBbDIJev5Fgr0VqMiA-328"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/retailer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retailer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Product List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjExMzMwNzMsIl9pZCI6IkRHIiwiZW1haWwiOiJkZ0BleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6Im1hbnVmYWN0dXJlciIsImlhdCI6MTU2MDc3MzA3M30.zFGv_0EMXBr7hXA5rnnbCCcV--Akhsw4EvxS_YqLwwI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/productlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"productlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scan Product Code",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA2MDAwMjMsIl9pZCI6IlJUMDA0IiwiZW1haWwiOiJkZ3JldGFpbGVyQGV4YW1wbGUuY29tIiwib3JnTmFtZSI6Im9yZzEiLCJyb2xlIjoicmV0YWlsZXIiLCJpYXQiOjE1NjAyNDAwMjN9._P_J0DBs8V2HaXvghymDnC-XyusfxO4WcDI3Gpn5VwM"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/scanproductcode/DGITEM3554",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scanproductcode",
+								"DGITEM3554"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sale Scan Product Code",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA2MDAwMjMsIl9pZCI6IlJUMDA0IiwiZW1haWwiOiJkZ3JldGFpbGVyQGV4YW1wbGUuY29tIiwib3JnTmFtZSI6Im9yZzEiLCJyb2xlIjoicmV0YWlsZXIiLCJpYXQiOjE1NjAyNDAwMjN9._P_J0DBs8V2HaXvghymDnC-XyusfxO4WcDI3Gpn5VwM"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/salescantag/DGITEM4784",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"salescantag",
+								"DGITEM4784"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scan Tag",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk2NTMsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJibG9vbWluZ2RhbGVAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTc1OTY1M30.m6BTR_VTFC4_7Pg5En-yMf_VyJf_GZ_e58R8x-5nKQE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/scantag/9d006b33fa603f4dcabe7ee164c9ac92c69646a674cc9ffdefb8344ad010169b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"scantag",
+								"9d006b33fa603f4dcabe7ee164c9ac92c69646a674cc9ffdefb8344ad010169b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate Tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk2NTMsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJibG9vbWluZ2RhbGVAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTc1OTY1M30.m6BTR_VTFC4_7Pg5En-yMf_VyJf_GZ_e58R8x-5nKQE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tagID\": \"9d006b33fa603f4dcabe7ee164c9ac92c69646a674cc9ffdefb8344ad010169b\",\n    \"productID\": \"LVITEM3627\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/authenticatetag",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"authenticatetag"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk2NTMsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJibG9vbWluZ2RhbGVAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTc1OTY1M30.m6BTR_VTFC4_7Pg5En-yMf_VyJf_GZ_e58R8x-5nKQE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"vidhyamudundi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTk5NTcxMjgsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJyZXRhaWxlcjFAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTU5NzEyOH0.03zKps2FLPghH7urVQK_dTJMLB85cEqRz2G1q_3AGfU"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"activationCode\":\"i3-MBmw5o\",\n\t\"email\":\"vidhyamudundi@gmail.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/verifyemail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"verifyemail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMTk2NTMsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJibG9vbWluZ2RhbGVAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTc1OTY1M30.m6BTR_VTFC4_7Pg5En-yMf_VyJf_GZ_e58R8x-5nKQE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vidhyamudundi@gmail.com\",\n    \"productID\": \"LVITEM2738\",\n    \"tagID\": \"222b9fd53931ae24c11f8b30757d6f654737f3fc50fd640365677f2e2a274b17\",\n    \"location\": {\n        \"locationID\": \"LOCATION1\",\n        \"name\": \"NC\",\n        \"gps\": \"567898\"\n    },\n    \"address\": {\n        \"city\": \"raliegh\",\n        \"state\": \"NC\",\n        \"addressline\": \"one copley pkwy\",\n        \"country\":\"\"\n    },\n    \"username\": \"sree\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/transaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "extra end points",
+			"item": [
+				{
+					"name": "Query Unassigned tags by tag technology",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTg5MDQyNTgsIl9pZCI6IkZSMDAxIiwiZW1haWwiOiJmYWN0b3J5MUBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTg1NDQyNTh9.XtcMHKM6eIr1XDEW79kmTeB_q1zjH2cxqWpVOsxu9JI"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/unassignedtags/chemical",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"unassignedtags",
+								"chemical"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query untagged products by brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTg5MTQwMDcsIl9pZCI6IkZSMDAxIiwiZW1haWwiOiJmYWN0b3J5MUBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTg1NTQwMDd9.mmMKfToqeKbJchBEXbpD2wTjDw2CGBi1RneUzPXv8WE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/untaggedproducts/PRADA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"untaggedproducts",
+								"PRADA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign tag to product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTg5MDQyNTgsIl9pZCI6IkZSMDAxIiwiZW1haWwiOiJmYWN0b3J5MUBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTg1NDQyNTh9.XtcMHKM6eIr1XDEW79kmTeB_q1zjH2cxqWpVOsxu9JI"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productID\": \"11e97cc7e28edb609b8423b0b60e443a\",\n    \"tagID\": \"11e97cca8b0a0b009e1e438ce9555502\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/assigntagtoproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"assigntagtoproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTg5MTQwMDcsIl9pZCI6IkZSMDAxIiwiZW1haWwiOiJmYWN0b3J5MUBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTg1NTQwMDd9.mmMKfToqeKbJchBEXbpD2wTjDw2CGBi1RneUzPXv8WE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand?brandid=GUCCI",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand"
+							],
+							"query": [
+								{
+									"key": "brandid",
+									"value": "GUCCI"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Brand",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTk5MTUxMTIsIl9pZCI6IkZSMDAyIiwiZW1haWwiOiJmYWN0b3J5MkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImZhY3RvcnkiLCJpYXQiOjE1NTk1NTUxMTJ9.wmPUelBFy8V5pvhSV4qrKQxGNPxX55EO_ivwk5d-grQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/brand/PRADA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"brand",
+								"PRADA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consumer Login",
+			"item": [
+				{
+					"name": "Verify cert hash",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxOTc1ODMsIl9pZCI6ImNvbnN1bWVyMTEyMiIsImVtYWlsIjoiY29uc3VtZXJAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJjb25zdW1lciIsImlhdCI6MTU1OTgzNzU4M30.ExcsSM6NnYXdEa9XiW4byCFXgylv5cyJNKTRK56mZBo"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hash\": \"fe051715ac008881d8241ba8ce92fa21e466aaabe67d8b548c7db2f858f38d56\",\n    \"email\": \"vidhyamudundi@gmail.com\",\n    \"productID\": \"LVITEM2738\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/verifycert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"verifycert"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTk1MTIyOTcsIl9pZCI6IlJUMDAxIiwiZW1haWwiOiJyZXRhaWxlcjFAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJyZXRhaWxlciIsImlhdCI6MTU1OTE1MjI5N30.SF8VYyPzjlxE0ovjOMITF-02kUbvhRRRRrB1KFFjQPg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consumer Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"consumer@example.com\",\n    \"password\": \"test123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMjAyODMsIl9pZCI6ImNvbnN1bWVyMTEyMiIsImVtYWlsIjoiY29uc3VtZXJAZXhhbXBsZS5jb20iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJjb25zdW1lciIsImlhdCI6MTU1OTc2MDI4M30.qsjLPdoPT2pi5a2LyfI7AEF4ngEgZCAodO0GmERUoq8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/verifyemail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"verifyemail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"test123\",\n    \"org\": \"org1\",\n    \"role\": \"admin\",\n    \"userID\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Warehouse",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxMDc0MTUsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5NzQ3NDE1fQ.V5rMy7IP6_i-121zBDxGjv3pNjQxwWVEDFztKFAGAyQ"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"warehouse@example.com\",\n  \"password\": \"test123\",\n  \"org\":\"org1\",\n  \"role\":\"warehouse\",\n  \"userID\":\"warehouse001\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Consumer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjAxODY3NTAsIl9pZCI6IiIsImVtYWlsIjoiYWRtaW4iLCJvcmdOYW1lIjoib3JnMSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1OTgyNjc1MH0.JOnE1dqXvaCKfA48L6T-2IhDV-uaTCrocyT85N8daaQ"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"consumer@example.com\",\n  \"password\": \"test123\",\n  \"org\":\"org1\",\n  \"role\":\"consumer\",\n  \"userID\":\"consumer1122\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Retailer List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTk5NTg3NzQsIl9pZCI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBleGFtcGxlLmNvbSIsIm9yZ05hbWUiOiJvcmcxIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTU5NTk4Nzc0fQ.qK460MNFcOJn-nNcCyyeJeKdXTqMGx8EjH3LJZ5FobA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/retailerlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"retailerlist"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

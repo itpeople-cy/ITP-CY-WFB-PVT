@@ -1,0 +1,465 @@
+{
+    "objects": [
+        {
+            "objectName": "Product",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "ProductID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "SKUID",
+                    "type": "string"
+                },
+                {
+                    "name": "UPCode",
+                    "type": "string"
+                },
+                {
+                    "name": "ProfileID",
+                    "type": "string"
+                },
+                {
+                    "name": "FactoryID",
+                    "type": "string"
+                },
+                {
+                    "name": "OrderNumber",
+                    "type": "string"
+                },
+                {
+                    "name": "RetailerID",
+                    "type": "string"
+                },
+                {
+                    "name": "Color",
+                    "type": "string"
+                },
+                {
+                    "name": "MSRP",
+                    "type": "string"
+                },
+                {
+                    "name": "ManufactureDate",
+                    "type": "string"
+                },
+                {
+                    "name": "ImageIDs",
+                    "type": "[]string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "ProductProfile",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "ProductProfileID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Size",
+                    "type": "string"
+                },
+                {
+                    "name": "Weight",
+                    "type": "string"
+                },
+                {
+                    "name": "BrandID",
+                    "type": "string"
+                },
+                {
+                    "name": "Description",
+                    "type": "string"
+                },
+                {
+                    "name": "ImageIDs",
+                    "type": "[]string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "ProductProfileSignature",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "ProductProfileID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "SignatureDocument",
+                    "type": "string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "Images",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "ImageID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "Description",
+                    "type": "string"
+                },
+                {
+                    "name": "ImageString",
+                    "type": "string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                },
+                {
+                    "name": "retailer",
+                    "actions": [
+                        "GET"
+                    ]
+                },
+                {
+                    "name": "consumer",
+                    "actions": [
+                        "GET"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "Manufacturer",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "ManufacturerID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Location",
+                    "type": "location"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "Retailer",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "RetailerID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Location",
+                    "type": "location"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "retailer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "TagSupplier",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "TagSupplierID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "TagTechnology",
+                    "type": "string"
+                },
+                {
+                    "name": "ScanTechnology",
+                    "type": "string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "tagsupplier",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "Location",
+            "isAsset": false,
+            "isUserDefinedType": true,
+            "attributes": [
+                {
+                    "name": "LocationID",
+                    "type": "string"
+                },
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "objectName": "Tag",
+            "isAsset": true,
+            "isUserDefinedType": false,
+            "keys": [
+                {
+                    "name": "TagID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "TagSupplierID",
+                    "type": "string"
+                },
+                {
+                    "name": "ProductID",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Pattern",
+                    "type": "string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "tagsupplier",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                },
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                },
+                {
+                    "name": "retailer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        }, {
+            "objectName": "Brand",
+            "isAsset": true,
+            "isUserDefinedType": true,
+            "keys": [
+                {
+                    "name": "BrandID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Logo",
+                    "type": "string"
+                },
+                {
+                    "name": "ManufacturerID",
+                    "type": "string"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "manufacturer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "Transaction",
+            "isAsset": true,
+            "isUserDefinedType": true,
+            "keys": [
+                {
+                    "name": "TransactionID",
+                    "type": "string"
+                }
+            ],
+            "attributes": [
+                {
+                    "name": "RetailerID",
+                    "type": "string"
+                },
+                {
+                    "name": "ProductID",
+                    "type": "string"
+                },
+                {
+                    "name": "SKUCode",
+                    "type": "string"
+                },
+                {
+                    "name": "UPCode",
+                    "type": "string"
+                },
+                {
+                    "name": "Location",
+                    "type": "location"
+                },
+                {
+                    "name": "GPS",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "string"
+                },
+                {
+                    "name": "Registration",
+                    "type": "registration"
+                }
+            ],
+            "roles": [
+                {
+                    "name": "retailer",
+                    "actions": [
+                        "GET",
+                        "POST",
+                        "PUT"
+                    ]
+                },
+                {
+                    "name": "consumer",
+                    "actions": [
+                        "GET"
+                    ]
+                }
+            ]
+        },
+        {
+            "objectName": "Registration",
+            "isAsset": false,
+            "isUserDefinedType": true,
+            "attributes": [
+                {
+                    "name": "TransactionID",
+                    "type": "string"
+                },
+                {
+                    "name": "EmailID",
+                    "type": "string"
+                },
+                {
+                    "name": "CertificateHash",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,127 @@
+{
+    "name": "Local Network Org1",
+    "x-networkId": "nb7e44dcb04bc49f0aadbf06c48f91745",
+    "x-type": "hlfv1",
+    "description": "Connection Profile for an IT People Corporation. Blockchain Platform Network",
+    "version": "1.0.2",
+    "client": {
+        "organization": "org1",
+        "x-organizationName": "Company A"
+    },
+    "channels": {
+        "defaultchannel": {
+            "x-status": "membership_valid",
+            "orderers": [
+                "orderer"
+            ],
+            "peers": {
+                "org1-peer1": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true,
+                    "x-chaincode": {}
+                },
+                "org2-peer1": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": false,
+                    "ledgerQuery": false,
+                    "eventSource": false,
+                    "x-chaincode": {}
+                }
+            },
+            "chaincodes": [],
+            "x-members": [
+                "org1",
+                "org2"
+            ]
+        }
+    },
+    "organizations": {
+        "org1": {
+            "mspid": "Org1MSP",
+            "peers": [
+                "org1-peer1"
+            ],
+            "certificateAuthorities": [
+                "ca-org1"
+            ],
+            "adminPrivateKey": {
+                "path": "../network/local/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/d7a0b92662c59cd05361fe39ea6b441a28dc9e4619453afbeb5037d67f262773_sk"
+            },
+            "signedCert": {
+                "path": "../network/local/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
+            },
+            "x-uploadedSignedCerts": []
+        }
+    },
+    "orderers": {
+        "orderer": {
+            "url": "grpcs://localhost:7050",
+            "grpcOptions": {
+                "grpc.http2.keepalive_time": 360,
+                "grpc.keepalive_time_ms": 360000,
+                "grpc.http2.keepalive_timeout": 180,
+                "grpc.keepalive_timeout_ms": 180000,
+                "ssl-target-name-override": "orderer0.example.com"
+            },
+            "tlsCACerts": {
+                "path": "../network/local/crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/tls/ca.crt"
+            }
+        }
+    },
+    "peers": {
+        "org1-peer1": {
+            "url": "grpcs://localhost:7051",
+            "eventUrl": "grpcs://localhost:7053",
+            "grpcOptions": {
+                "grpc.http2.keepalive_time": 360,
+                "grpc.keepalive_time_ms": 360000,
+                "grpc.http2.keepalive_timeout": 180,
+                "grpc.keepalive_timeout_ms": 180000,
+                "ssl-target-name-override": "peer0.org1.example.com"
+            },
+            "tlsCACerts": {
+                "path": "../network/local/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+            },
+            "x-mspid": "org1",
+            "x-ledgerDbType": "couch",
+            "x-installed-chaincode": {}
+        },
+        "org2-peer1": {
+            "url": "grpcs://localhost:8051",
+            "eventUrl": "grpcs://localhost:8053",
+            "grpcOptions": {
+                "grpc.http2.keepalive_time": 360,
+                "grpc.keepalive_time_ms": 360000,
+                "grpc.http2.keepalive_timeout": 180,
+                "grpc.keepalive_timeout_ms": 180000,
+                "ssl-target-name-override": "peer0.org2.example.com"
+            },
+            "tlsCACerts": {
+                "path": "../network/local/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt"
+            },
+            "x-mspid": "org2",
+            "x-ledgerDbType": "couch"
+        }
+    },
+    "certificateAuthorities": {
+        "ca-org1": {
+            "url": "https://localhost:7054",
+            "httpOptions": {
+                "verify": false
+            },
+            "tlsCACerts": {
+                "path": "../network/local/crypto-config/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem"
+            },
+            "registrar": [
+                {
+                    "enrollId": "admin",
+                    "enrollSecret": "adminpw"
+                }
+            ],
+            "caName": "ca-org1",
+            "x-mspid": "Org1MSP"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "factoryID": "FR003",
+    "location": {
+        "locationID": "VT001",
+        "name": "VIETNAM",
+        "gps":"567840° 45' 44.406'' N 73° 58' 3.5832'' W98"
+    },
+    "brandIDs": [
+        "D&G"
+    ]
+}

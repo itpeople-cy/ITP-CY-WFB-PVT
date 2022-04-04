@@ -1,0 +1,9 @@
+{
+    "retailerID": "RT001",
+    "name": "Bloomingdale's",
+    "location": {
+        "locationID": "NY123",
+        "name": "New York City",
+        "gps":"40° 45' 44.406'' N 73° 58' 3.5832'' W"
+    }
+}

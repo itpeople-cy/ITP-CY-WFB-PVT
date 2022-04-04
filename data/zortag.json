@@ -1,0 +1,13 @@
+{
+    "tagSupplierID": "zortag",
+    "name": "zortag",
+    "tagTechnology": [
+        "chemical"
+    ],
+    "scanTechnology": [
+        "app:zortag:zorsecure"
+    ],
+    "factoryIDs": [
+        "FR003"
+    ]
+}

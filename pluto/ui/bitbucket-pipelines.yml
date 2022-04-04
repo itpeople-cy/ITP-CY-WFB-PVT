@@ -1,0 +1,13 @@
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:8.11.3
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: # Run the tests.
+          - npm install
+          - npm test

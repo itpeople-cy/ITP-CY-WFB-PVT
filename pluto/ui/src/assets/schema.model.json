@@ -1,0 +1,386 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "Product": {
+      "type": "object",
+      "properties": {
+        "ProductID": {
+          "type": "string"
+        },
+        "SKUID": {
+          "type": "string"
+        },
+        "UPCode": {
+          "type": "string"
+        },
+        "ProfileID": {
+          "type": "string"
+        },
+        "FactoryID": {
+          "type": "string"
+        },
+        "OrderNumber": {
+          "type": "string"
+        },
+        "RetailerID": {
+          "type": "string"
+        },
+        "Color": {
+          "type": "string"
+        },
+        "MSRP": {
+          "type": "string"
+        },
+        "ManufactureDate": {
+          "type": "string"
+        },
+        "ImageIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "ProductID",
+        "SKUID",
+        "UPCode",
+        "ProfileID",
+        "FactoryID",
+        "OrderNumber",
+        "RetailerID",
+        "Color",
+        "MSRP",
+        "ManufactureDate",
+        "ImageIDs"
+      ]
+    },
+    "ProductProfile": {
+      "type": "object",
+      "properties": {
+        "StyleID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Size": {
+          "type": "string"
+        },
+        "Weight": {
+          "type": "string"
+        },
+        "BrandID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ImageIDs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "StyleID",
+        "Name",
+        "Size",
+        "Weight",
+        "BrandID",
+        "Description",
+        "ImageIDs"
+      ]
+    },
+    "ProductProfileSignature": {
+      "type": "object",
+      "properties": {
+        "StyleID": {
+          "type": "string"
+        },
+        "SignatureDocument": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "StyleID",
+        "SignatureDocument"
+      ]
+    },
+    "Images": {
+      "type": "object",
+      "properties": {
+        "ImageID": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "ImageString": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ImageID",
+        "Description",
+        "ImageString"
+      ]
+    },
+    "Manufacturer": {
+      "type": "object",
+      "properties": {
+        "ManufacturerID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "object",
+          "properties": {
+            "LocationID": {
+              "type": "string"
+            },
+            "Name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "LocationID",
+            "Name"
+          ]
+        }
+      },
+      "required": [
+        "ManufacturerID",
+        "Name",
+        "Location"
+      ]
+    },
+    "Retailer": {
+      "type": "object",
+      "properties": {
+        "RetailerID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "object",
+          "properties": {
+            "LocationID": {
+              "type": "string"
+            },
+            "Name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "LocationID",
+            "Name"
+          ]
+        }
+      },
+      "required": [
+        "RetailerID",
+        "Name",
+        "Location"
+      ]
+    },
+    "TagSupplier": {
+      "type": "object",
+      "properties": {
+        "TagSupplierID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "TagTechnology": {
+          "type": "string"
+        },
+        "ScanTechnology": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TagSupplierID",
+        "Name",
+        "TagTechnology",
+        "ScanTechnology"
+      ]
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "TagID": {
+          "type": "string"
+        },
+        "TagSupplierID": {
+          "type": "string"
+        },
+        "ProductID": {
+          "type": "string"
+        },
+        "Status": {
+          "type": "string"
+        },
+        "Pattern": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TagID",
+        "TagSupplierID",
+        "ProductID",
+        "Status",
+        "Pattern"
+      ]
+    },
+    "Brand": {
+      "type": "object",
+      "properties": {
+        "BrandID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "Logo": {
+          "type": "string"
+        },
+        "ManufacturerID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "BrandID",
+        "Name",
+        "Logo",
+        "ManufacturerID"
+      ]
+    },
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "RetailerID": {
+          "type": "string"
+        },
+        "ProductID": {
+          "type": "string"
+        },
+        "SKUCode": {
+          "type": "string"
+        },
+        "UPCode": {
+          "type": "string"
+        },
+        "Location": {
+          "type": "object",
+          "properties": {
+            "LocationID": {
+              "type": "string"
+            },
+            "Name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "LocationID",
+            "Name"
+          ]
+        },
+        "GPS": {
+          "type": "string"
+        },
+        "Date": {
+          "type": "string"
+        },
+        "Registration": {
+          "type": "object",
+          "properties": {
+            "TransactionID": {
+              "type": "string"
+            },
+            "EmailID": {
+              "type": "string"
+            },
+            "CertificateHash": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "TransactionID",
+            "EmailID",
+            "CertificateHash"
+          ]
+        }
+      },
+      "required": [
+        "TransactionID",
+        "RetailerID",
+        "ProductID",
+        "SKUCode",
+        "UPCode",
+        "Location",
+        "GPS",
+        "Date",
+        "Registration"
+      ]
+    }
+  },
+  "definitions": {
+    "location": {
+      "type": "object",
+      "properties": {
+        "LocationID": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "LocationID",
+        "Name"
+      ]
+    },
+    "registration": {
+      "type": "object",
+      "properties": {
+        "TransactionID": {
+          "type": "string"
+        },
+        "EmailID": {
+          "type": "string"
+        },
+        "CertificateHash": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TransactionID",
+        "EmailID",
+        "CertificateHash"
+      ]
+    }
+  },
+  "required": [
+    "Product",
+    "ProductProfile",
+    "ProductProfileSignature",
+    "Images",
+    "Manufacturer",
+    "Retailer",
+    "TagSupplier",
+    "Tag",
+    "Brand",
+    "Transaction"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+	"channelName": "defaultchannel",
+	"chaincodeName": "pluto",
+	"logLevel": "INFO",
+	"secret": "thisismysecret",
+	"host": "localhost",
+	"port": "3000",
+	"jwt_expiretime": "360000",
+	"defaultOrg": "org1",
+	"mongo": {
+		"uri": "mongodb://localhost:37017/project-kicker"
+	}
+}

@@ -1,0 +1,18 @@
+{
+    "manufacturerID": "LVMH",
+    "name": "Louis Vuitton",
+    "location": {
+        "locationID": "FRN001",
+        "name": "FRANCE",
+        "gps":"40° 43' 50.1960'' N and 73° 56' 6.8712'' W"
+    },
+    "factoryIDs": [
+        "FR001",
+        "FR002"
+    ],
+    "brandIDs": [
+        "LV",
+        "FN",
+        "MJ"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "tagSupplierID": "CYTag",
+    "name": "CYTag",
+    "tagTechnology": [
+        "qrcode"
+    ],
+    "scanTechnology": [
+        "cc:cy:generatehash"
+    ],
+    "factoryIDs": [
+        "FR001",
+        "FR002"
+    ]
+}
